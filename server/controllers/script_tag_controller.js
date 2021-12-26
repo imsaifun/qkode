@@ -1,24 +1,14 @@
-import axios from "axios"
+import Shopify, { DataType } from '@shopify/shopify-api';
 
 export async function createScriptTag(shop, token) {
-    const url = getCreateScriptTagUrl(shop)
-    const headers = {
-        'Content-Type': 'application/json',
-        'X-shopify-Access-Token': token
-    }
-    const body = {
-        "script_tag": {
-            "event": "onload",
-            "src": "https://google.com"
-        }
-    }
-    try {
-        const result = await axios.post(url, body, { headers: headers });
-        console.log(result.data);
-        return result.data
-    } catch (err) {
-        console.log('Err creating a new tag: ', err);
-    }
+
+    const client = new Shopify.Clients.Rest(shop, token);
+    const data = await client.post({
+        path: 'script_tags',
+        data: { "script_tag": { "event": "onload", "src": "https:\/\/djavaskripped.org\/fancy.js" } },
+        type: DataType.JSON,
+    });
+    console.log('Saiful',data);
 
 }
 

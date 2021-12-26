@@ -10,13 +10,13 @@ function Install() {
     const bodyDescription = isInstalled ? "Install" : "Uninstalled"
 
 
-   async function handleAction() {
+    async function handleAction() {
         if (!isInstalled) {
             const token = await getSessionToken(app);
             const config = {
-                headers: {Authorization: `Bearer ${token}`}
+                headers: { Authorization: `Bearer ${token}` }
             }
-            Axios.post(`https://saifun.loca.lt/script_tag`,{}, config)
+            Axios.post(`https://saifun.loca.lt/script_tag`, {}, config)
         }
         setIsInstalled((oldValue) => !oldValue)
     }

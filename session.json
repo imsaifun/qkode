@@ -1,15 +1,15 @@
 {
-  "id": "2dce6116-2e52-4de9-9902-6b9668e452a7",
+  "id": "51b961f3-1fca-4ff1-897e-bc757148e6a2",
   "shop": "qkode.myshopify.com",
-  "state": "695625501133293",
+  "state": "382308866018790",
   "isOnline": true,
-  "accessToken": "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",
-  "expires": "2021-12-21T11:28:03.297Z",
-  "scope": "write_products,write_customers,write_draft_orders",
+  "accessToken": "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",
+  "expires": "2021-12-26T06:40:55.140Z",
+  "scope": "write_products,write_customers,write_draft_orders,write_script_tags",
   "onlineAccessInfo": {
     "expires_in": 86398,
-    "associated_user_scope": "write_products,write_customers,write_draft_orders",
-    "session": "c163142c010ad2cf3effbce998ee7b8cea1d16ce813cd1d158b1934a95c0aa46",
+    "associated_user_scope": "write_products,write_customers,write_draft_orders,write_script_tags",
+    "session": "70dcb610e2967565b04cec3094c96929afe0e853efde12d6c179caff055fbb05",
     "account_number": 1,
     "associated_user": {
       "id": 78725972226,

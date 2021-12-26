@@ -120,8 +120,18 @@ app.prepare().then(async () => {
             await Shopify.Utils.graphqlProxy(ctx.req, ctx.res);
         }
     );
+
+
+    async function injectSession(ctx, next) {
+        const session = await Shopify.Utils.loadCurrentSession(ctx.req, ctx.res)
+        ctx.sessionFromToken = session
+        console.log('middleware', session);
+        return next();
+    }
+
+    server.use(injectSession);
     server.use(routes());
-    
+
     router.get("(/_next/static/.*)", handleRequest); // Static content is clear
     router.get("/_next/webpack-hmr", handleRequest); // Webpack content is clear
     router.get("(.*)", async (ctx) => {
